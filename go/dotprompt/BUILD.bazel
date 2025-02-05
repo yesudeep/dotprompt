@@ -1,17 +1,24 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
 
 go_library(
-    name = "helpers",
-    srcs = ["helpers.go"],
-    importpath = "github.com/google/dotprompt/go/src/dotprompt/helpers",
+    name = "dotprompt",
+    srcs = [
+        "environment.go",
+        "parse.go",
+        "types.go",
+    ],
+    importpath = "github.com/google/dotprompt/go/dotprompt",
     visibility = ["//visibility:public"],
     deps = ["@com_github_aymerick_raymond//:raymond"],
 )
 
 go_test(
-    name = "helpers_test",
-    srcs = ["helpers_test.go"],
-    embed = [":helpers"],
+    name = "dotprompt_test",
+    srcs = [
+        "environment_test.go",
+        "parse_test.go",
+    ],
+    embed = [":dotprompt"],
     deps = [
         "@com_github_aymerick_raymond//:raymond",
         "@com_github_stretchr_testify//assert",

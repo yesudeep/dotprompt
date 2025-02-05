@@ -1,9 +1,5 @@
 package dotprompt
 
-import (
-	"encoding/json"
-)
-
 // Part represents a section of a prompt document
 type Part interface {
 	isPartType()

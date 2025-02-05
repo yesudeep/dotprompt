@@ -3,9 +3,9 @@ load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
 go_library(
     name = "stores",
     srcs = ["dir.go"],
-    importpath = "github.com/google/dotprompt/go/src/dotprompt/stores",
+    importpath = "github.com/google/dotprompt/go/dotprompt/stores",
     visibility = ["//visibility:public"],
-    deps = ["//go/src/dotprompt"],
+    deps = ["//go/dotprompt"],
 )
 
 go_test(
@@ -13,7 +13,7 @@ go_test(
     srcs = ["dir_test.go"],
     embed = [":stores"],
     deps = [
-        "//go/src/dotprompt",
+        "//go/dotprompt",
         "@com_github_stretchr_testify//assert",
         "@com_github_stretchr_testify//require",
     ],

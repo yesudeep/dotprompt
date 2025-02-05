@@ -8,7 +8,28 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+// helperNames is a list of all helper names that we register
+var helperNames = []string{
+	"section",
+	"media",
+	"role",
+	"history",
+	"eq",
+	"not",
+	"and",
+	"or",
+	"json",
+}
+
+func resetHelpers() {
+	// Unregister all our helpers
+	for _, name := range helperNames {
+		raymond.RegisterHelper(name, nil)
+	}
+}
+
 func TestRegisterDefaultHelpers(t *testing.T) {
+	resetHelpers()
 	RegisterDefaultHelpers()
 
 	tests := []struct {
@@ -122,6 +143,7 @@ func TestRegisterDefaultHelpers(t *testing.T) {
 }
 
 func TestHelperCombinations(t *testing.T) {
+	resetHelpers()
 	RegisterDefaultHelpers()
 
 	tests := []struct {

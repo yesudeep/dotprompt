@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/google/dotprompt/go/src/dotprompt"
+	"github.com/google/dotprompt/go/dotprompt"
 )
 
 // DirStoreOptions represents options for creating a directory-based store

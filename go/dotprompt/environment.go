@@ -1,7 +1,6 @@
 package dotprompt
 
 import (
-	"encoding/json"
 	"fmt"
 	"sync"
 

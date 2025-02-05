@@ -6,8 +6,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/google/dotprompt/go/src/dotprompt"
-	"github.com/google/dotprompt/go/src/dotprompt/stores"
+	"github.com/google/dotprompt/go/dotprompt"
+	"github.com/google/dotprompt/go/dotprompt/stores"
 )
 
 func main() {
