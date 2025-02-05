@@ -10,6 +10,7 @@ go_library(
 
 go_test(
     name = "helpers_test",
+    size = "small",
     srcs = ["helpers_test.go"],
     embed = [":helpers"],
     deps = [
