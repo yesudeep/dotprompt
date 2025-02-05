@@ -1,0 +1,5 @@
+# See: https://github.com/bazelbuild/rules_go/blob/master/go/modes.rst#using-the-race-detector
+build:race --@io_bazel_rules_go//go/config:race
+
+build:ci --instrumentation_filter=//...\.* --collect_code_coverage
+test:ci --instrumentation_filter=//...\.* --collect_code_coverage

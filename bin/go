@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if ((EUID == 0)); then
+  echo "Please do not run as root"
+  exit
+fi
+
+bazel run @go_sdk//:bin/go -- "$@"

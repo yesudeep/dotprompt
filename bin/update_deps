@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if ((EUID == 0)); then
+  echo "Please do not run as root"
+  exit
+fi
+
+TOP_DIR=$(git rev-parse --show-toplevel)
+
+GO="${TOP_DIR}/bin/go"
+
+pushd "${TOP_DIR}/go"
+"${GO}" get -u ./...
+"${GO}" mod tidy
+popd
+
+bazel mod tidy
+bazel mod tidy
+
+"${TOP_DIR}/bin/gazelle"

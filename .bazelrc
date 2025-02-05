@@ -1,0 +1,34 @@
+# `.bazelrc` is a Bazel configuration file.
+# https://bazel.build/docs/best-practices#bazelrc-file
+
+common --enable_bzlmod
+
+# See: https://bazel.build/reference/command-line-reference#flag--enable_platform_specific_config
+build --enable_platform_specific_config
+build:windows --enable_runfiles
+
+run --color=yes
+
+build --color=yes
+build --verbose_failures
+build --enable_runfiles
+
+test --test_output=errors
+test --test_verbose_timeout_warnings
+#test --test_summary=terse
+
+common:quiet --noshow_progress
+common:quiet --ui_event_filters=-info,-stderr
+
+# See: https://bazel.build/reference/command-line-reference#flag--legacy_important_outputs
+common --nolegacy_important_outputs
+
+build --incompatible_strict_action_env
+build --noexperimental_check_output_files
+
+
+import %workspace%/etc/bazel/go.bazelrc
+
+
+# Allow user overrides. This should be the very last line and this file should be in .gitignore.
+try-import %workspace%/.user.bazelrc

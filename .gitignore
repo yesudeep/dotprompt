@@ -1,4 +1,5 @@
-/js/dist
-node_modules
 .firebaserc
+/js/dist
 /third_party/docsite/src/content/refdocs
+bazel-*
+node_modules

@@ -1,0 +1,8 @@
+.vscode
+bazel-bin
+bazel-dotprompt
+bazel-out
+bazel-testlogs
+js
+node_modules
+tmp

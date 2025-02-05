@@ -1,10 +1,10 @@
 module github.com/google/dotprompt/go
 
-go 1.21
+go 1.23
 
 require (
 	github.com/aymerick/raymond v2.0.2+incompatible // Handlebars implementation for Go
-	github.com/stretchr/testify v1.8.4
+	github.com/stretchr/testify v1.10.0
 )
 
 require (
