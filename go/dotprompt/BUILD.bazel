@@ -3,7 +3,7 @@ load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
 go_library(
     name = "dotprompt",
     srcs = [
-        "environment.go",
+        "dotprompt.go",
         "parse.go",
         "types.go",
     ],
@@ -16,7 +16,7 @@ go_test(
     name = "dotprompt_test",
     size = "small",
     srcs = [
-        "environment_test.go",
+        "dotprompt_test.go",
         "parse_test.go",
         "spec_test.go",
     ],

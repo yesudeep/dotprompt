@@ -169,6 +169,10 @@ func (d *Dotprompt) Compile(source string, metadata *PromptMetadata) (PromptFunc
 			return nil, err
 		}
 
+		if metadata == nil {
+			metadata = &PromptMetadata{}
+		}
+
 		return &RenderedPrompt{
 			Messages: messages,
 			Metadata: *metadata,
